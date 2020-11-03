@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+  <title>Frontend Mentor | Article preview component</title>
+  <link rel="stylesheet" href="main.css" />
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="image" alt="article image"></div>
+    <div class="article">
+      <h3 class="article-title">Shift the overall look and feel by adding these wonderful
+        touches to furniture in your home</h3>
+      <div class="article-text">Ever been in a room and felt like something was missing? Perhaps
+        it felt slightly bare and uninviting. I’ve got some simple tips
+        to help you make any room feel complete.</div>
+      <div class="article-footer">
+        <img src="images/avatar-michelle.jpg" class="article-author-avatar" alt="avatar of author" />
+        <div class="article-info">
+          <div class="article-author-name">Michelle Appleton</div>
+          <div class="article-date">28 Jun 2020</div>
+        </div>
+        <div class="article-share-button">
+          <img src="images/icon-share.svg" alt="share icon" />
+        </div>
+        <div class="article-share-popper">
+          <div class="article-share-popper-text">Share</div>
+          <img src="images/icon-facebook.svg" class="social-media-icon" alt="facebook icon" />
+          <img src="images/icon-twitter.svg" class="social-media-icon" alt="twitter icon" />
+          <img src="images/icon-pinterest.svg" class="social-media-icon" alt="pinterest icon" />
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/basarakkaya">Başar Akkaya</a>.
+  </div>
+  <script>
+    function togglePopper(event) {
+      if ($('.article-share-popper')[0].classList.contains('display')) {
+        $('.article-share-popper')[0].classList.remove('display');
+        $('.article-share-button')[0].classList.remove('active');
+      } else {
+        $('.article-share-popper')[0].classList.add('display');
+        $('.article-share-button')[0].classList.add('active');
+      }
+    }
+
+    window.onload = function () {
+      $('.article-share-button').on('click', togglePopper)
+    }
+  </script>
+</body>
+
+</html>
